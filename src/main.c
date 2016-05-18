@@ -19,9 +19,13 @@ void	launch_game(char **board, t_pow *power)
   {
     val_p1 = turn_p1(power, board);
     move(1, board, power, val_p1);
+    //check_win(board, power->p1, power);
     val_p2 = turn_p2(power, board);
+    //check_win(board, power->p2, power);
     move(2, board, power, val_p2);
   }
+  if (power->kill == 1)
+    my_putstr("you win !\n");
 }
 
 void	game_arg(char **args, t_pow *power)
